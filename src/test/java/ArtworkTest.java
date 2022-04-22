@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ArtworkTest {
 
-    Artist daVinci = new Artist("Davinci", new ArrayList<>());
+    Artist daVinci = new Artist("Da Vinci");
 
     Artwork piece1 = new Artwork("sunset", 100,  daVinci);
     Artwork piece2 = new Artwork("beauty", 500, daVinci);

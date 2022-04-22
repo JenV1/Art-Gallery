@@ -6,6 +6,12 @@ public class Customer {
     private int wallet;
     private ArrayList<Artwork> collection = new ArrayList<Artwork>();
 
+    public Customer(String name, int wallet) {
+        this.name = name;
+        this.wallet = wallet;
+        this.collection = new ArrayList<Artwork>();
+    }
+
     public Customer() {
     }
 

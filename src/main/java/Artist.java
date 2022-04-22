@@ -8,6 +8,11 @@ public class Artist {
     public Artist() {
     }
 
+    public Artist(String name) {
+        this.name = name;
+        this.works = new ArrayList<Artwork>();
+    }
+
     public String getName() {
         return name;
     }

@@ -8,6 +8,12 @@ public class Gallery {
     public Gallery() {
     }
 
+    public Gallery(String name, int till) {
+        this.name = name;
+        this.till = till;
+        this.artworks = new ArrayList<Artwork>();
+    }
+
     public Gallery(String name, int till, ArrayList<Artwork> artworks) {
         this.name = name;
         this.till = till;

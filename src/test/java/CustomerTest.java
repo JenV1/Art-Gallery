@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -7,14 +9,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
 
-    Gallery gallery = new Gallery("Art Palace", 1000, new ArrayList<Artwork>());
+    Gallery gallery;
+    Artist daVinci;
+    Artwork piece1;
+    Artwork piece2;
+    Customer customer1;
 
-    Artist daVinci = new Artist("Da Vinci", new ArrayList<>());
+    @BeforeEach
+    public void beforeAll() {
+        gallery = new Gallery("Art Palace", 1000);
 
-    Artwork piece1 = new Artwork("sunset", 10000, daVinci);
-    Artwork piece2 = new Artwork("beauty", 500, daVinci);
+        daVinci = new Artist("Da Vinci");
 
-    Customer customer1 = new Customer("Joey", 1000, new ArrayList<Artwork>());
+        piece1 = new Artwork("sunset", 10000, daVinci);
+        piece2 = new Artwork("beauty", 500, daVinci);
+
+        customer1 = new Customer("Joey", 1000);
+
+    }
 
     @Test
     @DisplayName("enough money, exists")
@@ -37,6 +49,7 @@ class CustomerTest {
         assertEquals(1000, customer1.getWallet());
         assertEquals(1000, gallery.getTill());
         assertFalse(customer1.getCollection().contains(piece2));
+        assertTrue(gallery.getArtworks().contains(piece1));
     }
 
     @Test
@@ -47,5 +60,17 @@ class CustomerTest {
         assertEquals(1000, customer1.getWallet());
         assertEquals(1000, gallery.getTill());
         assertFalse(customer1.getCollection().contains(piece2));
+        assertTrue(gallery.getArtworks().contains(piece1));
+    }
+
+    @Test
+    @DisplayName("not enough money, doesn't exist")
+    void buyArtwork_not_enough_and_does_not_exist() {
+        gallery.getArtworks().add(piece2);
+        customer1.buyArtwork(gallery, piece1);
+        assertEquals(1000, customer1.getWallet());
+        assertEquals(1000, gallery.getTill());
+        assertFalse(customer1.getCollection().contains(piece1));
+        assertTrue(gallery.getArtworks().contains(piece2));
     }
 }
