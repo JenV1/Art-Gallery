@@ -1,11 +1,19 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Customer {
 
     String name;
     int wallet;
-    List<String> collection = new ArrayList<>();
+    ArrayList<String> collection = new ArrayList<>();
+
+    public Customer() {
+    }
+
+    public Customer(String name, int wallet, ArrayList<String> collection) {
+        this.name = name;
+        this.wallet = wallet;
+        this.collection = collection;
+    }
 
     public String getName() {
         return name;
@@ -23,20 +31,20 @@ public class Customer {
         this.wallet = wallet;
     }
 
-    public List<String> getCollection() {
+    public ArrayList<String> getCollection() {
         return collection;
     }
 
-    public void setCollection(List<String> collection) {
+    public void setCollection(ArrayList<String> collection) {
         this.collection = collection;
     }
 
-    public Customer(String name, int wallet, List<String> collection) {
-        this.name = name;
-        this.wallet = wallet;
-        this.collection = collection;
-    }
-
-    public Customer() {
+    public void buyArtwork(Gallery gallery, Artwork art) {
+        int price = art.getPrice();
+        String identifier = art.getNft();
+        if (wallet >= price && gallery.getArtworks().contains(identifier)) {
+            wallet -= price;
+            gallery.setTill(gallery.getTill() + price);
+        }
     }
 }

@@ -1,10 +1,18 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Gallery {
     String name;
     int till;
-    List<String> artworks = new ArrayList<>();
+    ArrayList<String> artworks = new ArrayList<String>();
+
+    public Gallery() {
+    }
+
+    public Gallery(String name, int till, ArrayList<String> artworks) {
+        this.name = name;
+        this.till = till;
+        this.artworks = artworks;
+    }
 
     public String getName() {
         return name;
@@ -22,20 +30,11 @@ public class Gallery {
         this.till = till;
     }
 
-    public List<String> getArtworks() {
+    public ArrayList<String> getArtworks() {
         return artworks;
     }
 
-    public void setArtworks(List<String> artworks) {
+    public void setArtworks(ArrayList<String> artworks) {
         this.artworks = artworks;
-    }
-
-    public Gallery(String name, int till, List<String> artworks) {
-        this.name = name;
-        this.till = till;
-        this.artworks = artworks;
-    }
-
-    public Gallery() {
     }
 }
