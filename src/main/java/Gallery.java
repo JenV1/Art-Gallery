@@ -37,4 +37,15 @@ public class Gallery {
     public void setArtworks(ArrayList<Artwork> artworks) {
         this.artworks = artworks;
     }
+
+    public int stock_take() {
+        int length = artworks.size();
+        int total = 0;
+
+        for (int i=0; i<length; i++) {
+            total += artworks.get(i).getPrice();
+        }
+
+        return total;
+    }
 }
