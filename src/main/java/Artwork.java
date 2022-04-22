@@ -1,15 +1,14 @@
 import java.util.ArrayList;
 
 public class Artwork {
+
+    int counter = 1 ;
+
     private String title;
     private int price;
     private String nft;
     // nft is the unique identifier of each artwork
     private Artist artist;
-
-//    public void addToArtistCollection() {
-//        artist.getWorks().add(nft);
-//    }
 
     public String getTitle() {
         return title;
@@ -43,15 +42,14 @@ public class Artwork {
         this.artist = artist;
     }
 
-    public Artwork(String title, int price, String nft, Artist artist) {
+    public Artwork(String title, int price, Artist artist) {
         this.title = title;
         this.price = price;
-        this.nft = nft;
+        this.nft = "nft" + counter;
+        counter += 1;
         this.artist = artist;
         this.artist.getWorks().add(this);
 
     }
 
-    public Artwork() {
-    }
 }

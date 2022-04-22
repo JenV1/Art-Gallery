@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 public class Gallery {
-    String name;
-    int till;
-    ArrayList<Artwork> artworks = new ArrayList<Artwork>();
+    private String name;
+    private int till;
+    private ArrayList<Artwork> artworks = new ArrayList<Artwork>();
 
     public Gallery() {
     }

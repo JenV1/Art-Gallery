@@ -9,8 +9,8 @@ class ArtworkTest {
 
     Artist daVinci = new Artist("Davinci", new ArrayList<>());
 
-    Artwork piece1 = new Artwork("sunset", 100, "nft1", daVinci);
-    Artwork piece2 = new Artwork("beauty", 500, "nft2", daVinci);
+    Artwork piece1 = new Artwork("sunset", 100,  daVinci);
+    Artwork piece2 = new Artwork("beauty", 500, daVinci);
 
     @Test
     @DisplayName("check piece1 and piece2 added to artist collection")

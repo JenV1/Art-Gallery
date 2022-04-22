@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Customer {
 
-    String name;
-    int wallet;
-    ArrayList<Artwork> collection = new ArrayList<Artwork>();
+    private String name;
+    private int wallet;
+    private ArrayList<Artwork> collection = new ArrayList<Artwork>();
 
     public Customer() {
     }

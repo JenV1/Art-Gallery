@@ -11,8 +11,8 @@ class CustomerTest {
 
     Artist daVinci = new Artist("Da Vinci", new ArrayList<>());
 
-    Artwork piece1 = new Artwork("sunset", 10000, "nft1", daVinci);
-    Artwork piece2 = new Artwork("beauty", 500, "nft2", daVinci);
+    Artwork piece1 = new Artwork("sunset", 10000, daVinci);
+    Artwork piece2 = new Artwork("beauty", 500, daVinci);
 
     Customer customer1 = new Customer("Joey", 1000, new ArrayList<Artwork>());
 
