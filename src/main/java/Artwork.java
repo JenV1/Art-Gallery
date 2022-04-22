@@ -30,10 +30,6 @@ public class Artwork {
         return nft;
     }
 
-    public void setNft(String nft) {
-        this.nft = nft;
-    }
-
     public Artist getArtist() {
         return artist;
     }
