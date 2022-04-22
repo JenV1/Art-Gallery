@@ -3,12 +3,12 @@ import java.util.ArrayList;
 public class Gallery {
     String name;
     int till;
-    ArrayList<String> artworks = new ArrayList<String>();
+    ArrayList<Artwork> artworks = new ArrayList<Artwork>();
 
     public Gallery() {
     }
 
-    public Gallery(String name, int till, ArrayList<String> artworks) {
+    public Gallery(String name, int till, ArrayList<Artwork> artworks) {
         this.name = name;
         this.till = till;
         this.artworks = artworks;
@@ -30,11 +30,11 @@ public class Gallery {
         this.till = till;
     }
 
-    public ArrayList<String> getArtworks() {
+    public ArrayList<Artwork> getArtworks() {
         return artworks;
     }
 
-    public void setArtworks(ArrayList<String> artworks) {
+    public void setArtworks(ArrayList<Artwork> artworks) {
         this.artworks = artworks;
     }
 }

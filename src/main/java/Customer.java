@@ -4,15 +4,9 @@ public class Customer {
 
     String name;
     int wallet;
-    ArrayList<String> collection = new ArrayList<>();
+    ArrayList<Artwork> collection = new ArrayList<Artwork>();
 
     public Customer() {
-    }
-
-    public Customer(String name, int wallet, ArrayList<String> collection) {
-        this.name = name;
-        this.wallet = wallet;
-        this.collection = collection;
     }
 
     public String getName() {
@@ -31,20 +25,28 @@ public class Customer {
         this.wallet = wallet;
     }
 
-    public ArrayList<String> getCollection() {
+    public ArrayList<Artwork> getCollection() {
         return collection;
     }
 
-    public void setCollection(ArrayList<String> collection) {
+    public void setCollection(ArrayList<Artwork> collection) {
+        this.collection = collection;
+    }
+
+    public Customer(String name, int wallet, ArrayList<Artwork> collection) {
+        this.name = name;
+        this.wallet = wallet;
         this.collection = collection;
     }
 
     public void buyArtwork(Gallery gallery, Artwork art) {
         int price = art.getPrice();
         String identifier = art.getNft();
-        if (wallet >= price && gallery.getArtworks().contains(identifier)) {
+        if (wallet >= price && gallery.getArtworks().contains(art)) {
             wallet -= price;
             gallery.setTill(gallery.getTill() + price);
+            collection.add(art);
+            gallery.getArtworks().remove(art);
         }
     }
 }

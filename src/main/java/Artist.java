@@ -2,16 +2,10 @@ import java.util.ArrayList;
 
 public class Artist {
 
-    String name;
-    ArrayList<String> works = new ArrayList<String>();
-    // art stored by their unique nft identifier
+    private String name;
+    private ArrayList<Artwork> works = new ArrayList<Artwork>();
 
     public Artist() {
-    }
-
-    public Artist(String name, ArrayList<String> works) {
-        this.name = name;
-        this.works = works;
     }
 
     public String getName() {
@@ -22,11 +16,16 @@ public class Artist {
         this.name = name;
     }
 
-    public ArrayList<String> getWorks() {
+    public ArrayList<Artwork> getWorks() {
         return works;
     }
 
-    public void setWorks(ArrayList<String> works) {
+    public void setWorks(ArrayList<Artwork> works) {
+        this.works = works;
+    }
+
+    public Artist(String name, ArrayList<Artwork> works) {
+        this.name = name;
         this.works = works;
     }
 }
